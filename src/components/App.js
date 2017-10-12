@@ -1,28 +1,42 @@
 import React from 'react'
-import PropTypes from 'prop-types'
-import {Menu, Segment} from 'semantic-ui-react'
+import { Container} from 'semantic-ui-react'
+import {Route, Switch, Link} from 'react-router-dom'
 
-const Navigation = () => {
-  return (
-      <Menu color="purple">
-          <Menu.Item name='Home'  ></Menu.Item>
-      </Menu>
-  )
-}
+import Navigation from './Navigation'
+import Home from './Home'
+import Bookmark from './Bookmark'
 
-const App = ({children}) => {
+const App = () => {
+  const style = {
+    margin: '-14px auto',
+    padding: '20px',
+
+
+  }
   return (
-    <div>
+    <div >
       <Navigation />
-      <main>
-        {children}
+      <main style={style}>
+        <Switch>
+          <Route 
+            exact 
+            path='/' 
+            render={(props) => <Home {...props} />} 
+          />
+          <Route path="/bookmarks" component={Bookmark} />
+          <Route exact path='/address/:id' render={() => <h1>Hello detail </h1>} />
+          <Route  render={() => {
+              return (
+                <Container >
+                  <h4>Oops page not found </h4>
+                  <span>Try <Link to="/">Home</Link> </span>
+                </Container>
+              )
+            }} />
+        </Switch>
       </main>
     </div>
   )
 }
 
 export default App
-
-App.propTypes = {
-  children: PropTypes.element.isRequired
-}

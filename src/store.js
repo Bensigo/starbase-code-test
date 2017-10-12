@@ -1,19 +1,18 @@
 import {createStore, applyMiddleware} from 'redux'
 import logger from 'redux-logger'
-import promise from 'redux-promise-middleware'
-import {addBookmark, removeBookmark, activeBookmark} from './actions/bookmarkActions'
+import promiseMiddleware from 'redux-promise-middleware'
+import {getEtherPrice} from './actions/etherPrice'
 
 import {appReducer} from './reducer'
 
-const middleware = applyMiddleware(logger, promise())
+
+
+const middleware = applyMiddleware(logger, promiseMiddleware())
 
 export const store = createStore(appReducer, middleware)
 
+console.log('price')
 
 
-store.dispatch(addBookmark('vckdlcshuchsgchslkciou'))
-store.dispatch(addBookmark('gchbfvkloiushcmdgiuhdf'))
-store.dispatch(activeBookmark('gchbfvkloiushcmdgiuhdf'))
- store.dispatch(addBookmark('gchbfvkloiushcmdgiuhdf'))
-store.dispatch(removeBookmark('vckdlcshuchsgchslkciou'))
-store.dispatch(addBookmark('gcdivuyhcdloiuhckdji'))
+
+ store.dispatch(getEtherPrice())
