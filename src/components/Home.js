@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import {Container, Segment, Button, Form} from 'semantic-ui-react'
 import {PropTypes} from 'prop-types'
 
+import EtherConverter from './controller/EtherConverter'
 
 class Home extends Component {
   constructor (props) {
@@ -19,7 +20,7 @@ class Home extends Component {
     const {address} = this.state
     return (
       <Container>
-       <Segment inverted  color="blue darken-3" raised>
+       <Segment inverted  color="deep purple" raised>
        <div>
           <Form onSubmit={()=> this.props.history.push(`/address/${address}`)} >
             <h5>Enter Your Ethereum Address To Watch Transaction</h5>
@@ -27,11 +28,12 @@ class Home extends Component {
               type="text"
               value={this.state.address}
               onChange={this.handleChange}
-              placeholder="address"
+              placeholder="Ether address"
             />
             <Button type="submit"  >Go</Button>
           </Form>
         </div>
+        <EtherConverter />
        </Segment>
       </Container>
     )

@@ -5,5 +5,5 @@ import {getEtherReducer} from './etherPrice'
 
 export const appReducer = combineReducers({
   bookmark: bookmarkReducer,
-  getLastPrice: getEtherReducer
+  getEther: getEtherReducer
 })
