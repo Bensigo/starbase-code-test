@@ -3,8 +3,10 @@ import {connect} from 'react-redux'
 // import {bindActionCreators} from 'redux'
 import {toBTC, toUSD} from '../../utils/converter'
 import {getEtherPrice, changeEthPrice} from '../../actions/etherPrice'
-import {Segment, Container, Icon, Header} from 'semantic-ui-react'
+import {Segment, Container, Image, Header} from 'semantic-ui-react'
 import Calculator from '../Calculator'
+
+import etherLogo from '../../1600.png'
 
 class EtherConverter extends Component {
   componentWillMount() {
@@ -24,9 +26,9 @@ class EtherConverter extends Component {
     }
     return (
       <Segment raised>
-        <Segment inverted color=" blue-grey darken-4" raised>
+        <Segment inverted color=" blue-grey darken-4" raised style={{padding:'auto 0'}}>
           <Header size='huge'> 
-            <Icon name="sort" color="teal"/>
+            <Image src={etherLogo} size="mini" style={{marginTop:'-5px'}}/>
             Ether Price
           </Header>
         </Segment>

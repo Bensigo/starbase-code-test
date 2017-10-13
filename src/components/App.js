@@ -4,7 +4,7 @@ import {Route, Switch, Link} from 'react-router-dom'
 
 import Navigation from './Navigation'
 import Home from './Home'
-import Bookmark from './Bookmark'
+import Bookmarks from './controller/Bookmarks'
 
 const App = () => {
   const style = {
@@ -23,7 +23,7 @@ const App = () => {
             path='/' 
             render={(props) => <Home {...props} />} 
           />
-          <Route path="/bookmarks" component={Bookmark} />
+          <Route path="/bookmarks" render={(props)=> <Bookmarks {...props} />} />
           <Route exact path='/address/:id' render={() => <h1>Hello detail </h1>} />
           <Route  render={() => {
               return (
