@@ -20,7 +20,7 @@ class Home extends Component {
     const {address} = this.state
     return (
       <Container>
-       <Segment inverted  color="deep purple" raised>
+       <Segment  style={segmentStyle}  raised>
        <div>
           <Form onSubmit={()=> this.props.history.push(`/address/${address}`)} >
             <h5>Enter Your Ethereum Address To Watch Transaction</h5>
@@ -30,7 +30,7 @@ class Home extends Component {
               onChange={this.handleChange}
               placeholder="Ether address"
             />
-            <Button type="submit"  >Go</Button>
+            <Button type="submit" inverted color="green" >Go</Button>
           </Form>
         </div>
         <EtherConverter />
@@ -40,7 +40,9 @@ class Home extends Component {
   }
 
 }
-
+const segmentStyle = {
+  backgroundColor: "#eeeeee"
+}
 Segment.propTypes = {
   color: PropTypes.string
 }

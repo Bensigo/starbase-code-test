@@ -21,21 +21,21 @@ const Calulator = (props) => {
      <Form.Group widths='equal'>
          <Form.Input 
            type="text"
-           disabled 
            value={props.toBTC}
            labelPosition='right'
          >
          <input/>
-         <Label  color="red">BTC</Label>
+         <Label  color="blue">BTC</Label>
          </Form.Input>
         
          <Form.Input 
-           disabled 
+            
+           style= {inputStyle}
            value={props.toUSD}
            labelPosition='right'
          >
          <input/>
-         <Label  color="red">USD</Label>
+         <Label  color="blue">USD</Label>
          </Form.Input>
          
      </Form.Group>
@@ -43,4 +43,8 @@ const Calulator = (props) => {
   )
 }
 
+const inputStyle = {
+  color: 'red',
+  type: 'disabled'
+}
 export default Calulator

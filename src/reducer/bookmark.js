@@ -1,7 +1,7 @@
 import {ACTIVE_BOOKMARK,ADD_BOOKMARK,REMOVE_BOOKMARK} from '../actions/bookmarkActions'
 
 const initialstate = {
-  bookmark: [],
+  bookmarks: [],
   activeBookmark: ''
 }
 
@@ -11,11 +11,16 @@ const bookmarkReducder = (state=initialstate, action) => {
       return {...state, activeBookmark: action.payload}
     }
     case ADD_BOOKMARK: {
-      return {...state, bookmark: [...state.bookmark, action.payload] }
+      return {...state, bookmarks: [...state.bookmarks, action.payload] }
     }
     case REMOVE_BOOKMARK: {
       console.log(state)
-      return {...state,bookmark: state.bookmark.filter(item => item !== action.payload)}
+      return {...state,bookmarks: () => {
+        const index = state.bookmarks.indexOf(action.payload)
+        if (index > -1){
+          state.splice(index, 1)
+        }
+      }}
     }
     default: 
       return state

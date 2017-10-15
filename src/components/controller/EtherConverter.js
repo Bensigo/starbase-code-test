@@ -26,7 +26,7 @@ class EtherConverter extends Component {
     }
     return (
       <Segment raised>
-        <Segment inverted color=" blue-grey darken-4" raised style={{padding:'auto 0'}}>
+        <Segment inverted color="grey" raised style={{padding:'auto 0'}}>
           <Header size='huge'> 
             <Image src={etherLogo} size="mini" style={{marginTop:'-5px'}}/>
             Ether Price

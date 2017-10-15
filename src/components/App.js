@@ -5,6 +5,7 @@ import {Route, Switch, Link} from 'react-router-dom'
 import Navigation from './Navigation'
 import Home from './Home'
 import Bookmarks from './controller/Bookmarks'
+import AdrressDetails from './controller/AddressDetails'
 
 const App = () => {
   const style = {
@@ -24,7 +25,7 @@ const App = () => {
             render={(props) => <Home {...props} />} 
           />
           <Route path="/bookmarks" render={(props)=> <Bookmarks {...props} />} />
-          <Route exact path='/address/:id' render={() => <h1>Hello detail </h1>} />
+          <Route exact path='/address/:id' render={(props) => <AdrressDetails {...props} /> }/>
           <Route  render={() => {
               return (
                 <Container >

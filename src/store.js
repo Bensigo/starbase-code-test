@@ -3,7 +3,7 @@ import logger from 'redux-logger'
 import promiseMiddleware from 'redux-promise-middleware'
 import thunk from 'redux-thunk'
 import {getEtherPrice} from './actions/etherPrice'
-
+import {addBookmark,removeBookmark} from './actions/bookmarkActions'
 import {appReducer} from './reducer'
 
 
@@ -18,4 +18,7 @@ console.log('price')
 
  store.dispatch(getEtherPrice())
 
- // test 
+//  // test 
+// store.dispatch(addBookmark('ghdfgbndkifuyegnkfiue'))
+// store.dispatch(addBookmark('djkjlfhgvndbmfnmju'))
+// store.dispatch(removeBookmark('ghdfgbndkifuyegnkfiue'))
