@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import {Image, Header, Icon, Segment} from 'semantic-ui-react'
+import {Image, Header, Icon, Container, Segment} from 'semantic-ui-react'
 import etherPic from '../../1600.png'
 import {connect} from 'react-redux'
 import {addBookmark} from '../../actions/bookmarkActions'
 import AlertContainer from 'react-alert'
+import QRCode from 'qrcode.react'
 
 class AddressDetails extends Component {
   alertOptions = {
@@ -25,20 +26,23 @@ class AddressDetails extends Component {
     const address = this.props.match.params.id
     return (
       
-     <Segment>
+     <Segment piled>
        <Image src={etherPic} size="tiny" shape="rounded" />
-       <Segment textAlign="center">
+       <Container textAlign="center">
           <Header size="large" >
             Ether address: {address} 
           </Header>
           <AlertContainer ref={a => this.msg = a} {...this.alertOptions} />
+           <QRCode value={address} />
+          <br />
           <Icon
             circular
             name="bookmark"
             color="green"
             onClick={() => this.handleAddBookmark(address)}
-          />
-        </Segment>  
+          /> 
+          
+        </Container>  
      </Segment>
     )
   }

@@ -5133,7 +5133,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.6.0:
+prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.6.0:
   version "15.6.0"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5178,9 +5178,20 @@ q@^1.1.2:
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
 
+qr.js@0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/qr.js/-/qr.js-0.0.0.tgz#cace86386f59a0db8050fa90d9b6b0e88a1e364f"
+
 qrcode-npm@^0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/qrcode-npm/-/qrcode-npm-0.0.3.tgz#77ee6fbefa9c0f29fa09d4d1520807c6a6042b9a"
+
+qrcode.react@^0.7.2:
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/qrcode.react/-/qrcode.react-0.7.2.tgz#72a5718fd56baafe15c2c153fe436628d83aa286"
+  dependencies:
+    prop-types "^15.5.8"
+    qr.js "0.0.0"
 
 qs@6.5.1, qs@~6.5.1:
   version "6.5.1"

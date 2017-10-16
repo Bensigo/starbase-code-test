@@ -6,6 +6,7 @@
     "axios": "^0.16.2",
     "prop-types": "^15.6.0",
     "qrcode-npm": "^0.0.3",
+    "qrcode.react": "^0.7.2",
     "react": "^16.0.0",
     "react-alert": "^2.4.0",
     "react-dom": "^16.0.0",
