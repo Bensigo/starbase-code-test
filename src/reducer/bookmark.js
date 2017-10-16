@@ -14,13 +14,13 @@ const bookmarkReducder = (state=initialstate, action) => {
       return {...state, bookmarks: [...state.bookmarks, action.payload] }
     }
     case REMOVE_BOOKMARK: {
-      console.log(state)
-      return {...state,bookmarks: () => {
-        const index = state.bookmarks.indexOf(action.payload)
-        if (index > -1){
-          state.splice(index, 1)
-        }
-      }}
+      console.log("Bookmarks: ", state.bookmarks, "payload: ", action.payload)
+      const address = action.payload
+      const bookmarks = state.bookmarks.filter(item => address !== item)
+      return {
+        ...state, 
+        bookmarks: bookmarks
+      }
     }
     default: 
       return state

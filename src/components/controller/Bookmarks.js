@@ -17,6 +17,7 @@ class BookMarks extends Component {
     this.deleteBookmark = this.deleteBookmark.bind(this)
   }
   deleteBookmark (address){
+    console.log(address)
     this.props.dispatch(removeBookmark(address))
   }
   render () {
@@ -42,7 +43,7 @@ class BookMarks extends Component {
               this.props.bookmarks.map((address,i) => (
                 <List.Item key={address} style={listStyle}>
                   <List.Content floated='right'>
-                    <Button inverted color="red" onClick={(address) =>  this.deleteBookmark(address)}>Remove</Button>
+                    <Button inverted color="red" onClick={() =>  this.deleteBookmark(address)}>Remove</Button>
                    </List.Content>
                   <Image avatar src={etherPic} />
                    <List.Content 
