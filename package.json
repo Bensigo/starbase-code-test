@@ -18,7 +18,8 @@
     "redux-thunk": "^2.2.0",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-react": "^0.74.2",
-    "websocket": "^1.0.24"
+    "socket.io-client": "^2.0.3",
+    "sockjs-client": "^1.1.4"
   },
   "devDependencies": {
     "react-scripts": "1.0.14"

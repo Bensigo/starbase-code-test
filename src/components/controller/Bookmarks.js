@@ -21,7 +21,9 @@ class BookMarks extends Component {
     this.props.dispatch(removeBookmark(address))
   }
   render () {
-    if(this.props.bookmarks.length === 0){
+    const bookmarks =JSON.parse(localStorage.getItem('bookmarks'))
+    console.log(bookmarks)
+    if(bookmarks.length === 0){
       return (
 
     <Container>
@@ -40,7 +42,7 @@ class BookMarks extends Component {
           <Header color="grey">Watch list of ethereum adresses</Header>
           <List divided verticalAlign='middle' animated >
             {
-              this.props.bookmarks.map((address,i) => (
+              bookmarks.map((address,i) => (
                 <List.Item key={address} style={listStyle}>
                   <List.Content floated='right'>
                     <Button inverted color="red" onClick={() =>  this.deleteBookmark(address)}>Remove</Button>

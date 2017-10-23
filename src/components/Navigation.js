@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Menu, Segment} from 'semantic-ui-react'
+import {Menu} from 'semantic-ui-react'
 import {Link} from 'react-router-dom'
 
 class Navigation  extends Component{
@@ -8,7 +8,6 @@ class Navigation  extends Component{
  render () {
   const {activeItem} = this.state 
   return (
-      <Segment>
         <Menu   pointing secondary >
             <Menu.Item 
               name='Home' 
@@ -26,8 +25,7 @@ class Navigation  extends Component{
               onClick={this.handleClick}
             >
             </Menu.Item>
-        </Menu>
-      </Segment>  
+        </Menu>  
   )
  }
 }

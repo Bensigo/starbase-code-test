@@ -3,7 +3,7 @@ import logger from 'redux-logger'
 import promiseMiddleware from 'redux-promise-middleware'
 import thunk from 'redux-thunk'
 import {getEtherPrice} from './actions/etherPrice'
-import {addBookmark,removeBookmark} from './actions/bookmarkActions'
+// import {addBookmark,removeBookmark} from './actions/bookmarkActions'
 import {appReducer} from './reducer'
 
 

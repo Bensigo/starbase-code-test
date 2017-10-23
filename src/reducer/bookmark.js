@@ -11,12 +11,16 @@ const bookmarkReducder = (state=initialstate, action) => {
       return {...state, activeBookmark: action.payload}
     }
     case ADD_BOOKMARK: {
-      return {...state, bookmarks: [...state.bookmarks, action.payload] }
+      const newState = {...state, bookmarks: [...state.bookmarks, action.payload] }
+      localStorage.setItem('bookmarks',JSON.stringify(newState.bookmarks))
+      return newState
+
     }
     case REMOVE_BOOKMARK: {
       console.log("Bookmarks: ", state.bookmarks, "payload: ", action.payload)
       const address = action.payload
       const bookmarks = state.bookmarks.filter(item => address !== item)
+      localStorage.setItem('bookmarks', JSON.stringify(bookmarks))
       return {
         ...state, 
         bookmarks: bookmarks
